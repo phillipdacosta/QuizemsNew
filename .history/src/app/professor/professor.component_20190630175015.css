@@ -1,0 +1,35 @@
+.divider{
+    width:5px;
+    height:auto;
+    display:inline-block;
+}
+
+.heading{
+
+  margin: auto;
+  width: 60%;
+  border: 3px solid #73AD21;
+  padding: 10px;
+}
+
+.headingButtons{
+
+  margin: auto;
+  width: 30vw;
+  padding: 10px;
+
+  
+}
+
+.inputgroup{
+
+  text-align: center;
+
+}
+
+.modal-lg{
+
+  width: 750px;
+  height: 750px;
+ 
+}

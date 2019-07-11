@@ -1,0 +1,14 @@
+.quizFont{
+
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", 
+    Helvetica, Arial, "Lucida Grande", sans-serif;
+    text-align: center
+}
+
+.dot {
+	border-radius: 50%;
+	width: 200px;
+	height: 200px; 
+ 
+
+  }

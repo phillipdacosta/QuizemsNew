@@ -1,0 +1,23 @@
+
+
+
+<form>
+  Question: <input type="text" name="question" [(ngModel)] = "questionModel.question"><br> 
+  Ans1: <input type="text" name="a1" class="form-control"[(ngModel)] = "questionModel.answerOne"><br>
+  Ans2: <input type="text" name="a2" [(ngModel)] = "questionModel.answerTwo"><br>
+  Ans3: <input type="text" name="a3"[(ngModel)] = "questionModel.answerThree"><br>
+  Ans4: <input type="text" name="a4"[(ngModel)] = "questionModel.answerFour"><br>
+  <br>
+  Correct Answer: <input type="text" name="correctAnswer"[(ngModel)] = "questionModel.correctAnswer"><br>
+</form>
+
+
+
+<br>
+<br>
+
+{{questionModel.answerOne}}
+{{questionModel.answerTwo}}
+{{questionModel.answerThree}}
+{{questionModel.answerFour}}
+{{questionModel.correctAnswer}}

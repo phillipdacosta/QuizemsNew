@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+
+
+  <!-- The Modal -->
+  <div class="modal" id="myModal">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+      
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">Congrats!</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        
+        <!-- Modal body -->
+        <div class="modal-body">
+        Your quiz has been created!
+         <br>
+         <br>
+         Here is your shareable link: https://quizemsnew.firebaseapp.com/#/quiz
+        </div>
+        
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+  
+</div>
+
+</body>
+</html>
+
+
+
+<div class = "jumbotron">
+    <div class = "heading">   
+        <h2>After you have created your quiz, click save and then click the Create Link button to create a shareable link to your quiz!</h2> 
+      </div> 
+
+      <br>
+      <br>
+      <br>
+
+
+    <div class="row justify-content-center">
+
+    <div class = "col-xs-3">
+          
+        <div class="form-group">
+          
+          
+
+            <input type="text" class="form-control " id="exampleInputPassword1" placeholder="Professor Name">
+            <br>
+    
+            <input type="text" class="form-control" [(ngModel)] = "questionModel.quizName" id="exampleInputPassword1" placeholder="Quiz Name">
+
+    
+          </div>
+          </div>
+        </div>
+
+
+
+
+<div class = "headingButtons">  
+
+
+      <button type="button" class="btn btn-info btn-lg" (click) = "newQuestion()">Add a new question</button> 
+
+&nbsp;
+
+
+    <button type="button" class="btn btn-info btn-lg" (click) = "populateQuiz()">Save progress</button>
+
+
+&nbsp;
+  <!--  <button (click)="loadQuiz()">Load</button>--> 
+<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal" (click) = "createLink()">Create Quiz Link</button>
+
+</div> 
+<br>
+<br>
+
+
+<div *ngFor = "let q of data.questionslist"> 
+  <app-questions [questionModel]="q"></app-questions>
+</div>
+
+</div>
+
+
+

@@ -1,0 +1,25 @@
+
+
+
+<div class = "forms-group">   
+<form>
+  Question: <input class="control-label col-sm-2"type="text" name="question" [(ngModel)] = "questionModel.question"><br> 
+  Ans1: <input class="control-label col-sm-2" type="text" name="a1" [(ngModel)] = "questionModel.answerOne"><br>
+  Ans2: <input class="control-label col-sm-2"type="text" name="a2" [(ngModel)] = "questionModel.answerTwo"><br>
+  Ans3: <input class="control-label col-sm-2"type="text" name="a3"[(ngModel)] = "questionModel.answerThree"><br>
+  Ans4: <input class="control-label col-sm-2"type="text" name="a4"[(ngModel)] = "questionModel.answerFour"><br>
+  <br>
+  Correct Answer: <input type="text" class="control-label col-sm-2"name="correctAnswer"[(ngModel)] = "questionModel.correctAnswer"><br>
+</form>
+
+</div>
+<br>
+<br>
+
+{{questionModel.answerOne}}
+{{questionModel.answerTwo}}
+{{questionModel.answerThree}}
+{{questionModel.answerFour}}
+{{questionModel.correctAnswer}}
+
+

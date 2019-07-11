@@ -1,0 +1,22 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Flash Quiz</title>
+        <script type="text/javascript" src="javascript/swfobject.js"></script>
+        <link rel="stylesheet" href="css/flashEmbedStyles.css" type="text/css" media="screen" />
+    </head>
+    <body>
+        <div id="flashcontent">To view this content, please update to the most recent version of Flash Player. If you are sure you are all up-to-date, then you can click the following link to <a href="index.php?detectflash=false">bypass detection.</a></div>
+        <script type="text/javascript">
+            // <![CDATA[
+                var so = new SWFObject("${swf}.swf", "${application}", "${width}", "${height}", "${version_major}.${version_minor}.${version_revision}", "${bgcolor}");
+                so.addParam("align", "left");
+                so.addParam("scale", "noscale");
+                so.addParam("allowScriptAccess", "always");
+                so.addVariable("lang", getQueryParamValue("lang"));
+                so.write("flashcontent");
+            // ]]>
+        </script>
+    </body>
+</html> 

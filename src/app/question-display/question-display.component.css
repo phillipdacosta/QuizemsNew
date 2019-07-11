@@ -1,0 +1,22 @@
+.quizName{
+
+    text-align: center;
+}
+
+hr.new1{
+
+    border-top: 5px solid black;
+}
+
+input[type="radio"] {
+    opacity: 10;
+   }
+.card-body{
+
+    font-weight: bold;
+}
+.container{
+
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", 
+  Helvetica, Arial, "Lucida Grande", sans-serif;
+}

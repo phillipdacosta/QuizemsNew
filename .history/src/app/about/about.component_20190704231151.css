@@ -1,0 +1,22 @@
+.welcomeText{
+
+    text-align: center;
+    color: #00b4ff;
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", 
+    Helvetica, Arial, "Lucida Grande", sans-serif;
+}
+
+.btn{
+
+    padding: 30px 50px;
+} 
+
+.container{
+
+    font-family:Helvetica Neue;
+}
+
+.aboutText{
+
+    color: #00b4ff;
+}
