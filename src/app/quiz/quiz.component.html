@@ -1,24 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
 
-  <h4>Professor name: {{data.professorName}} </h4>    
-    <h4> Class name: {{data.quizName}}</h4>    
-<div *ngIf = "data.flag">
-<div class = 'quizFont'>
+<head>
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
 
 
-<form>
-    <h3>Check the answer to each multiple-choice question, and click on the "Submit" button to submit the quiz.</h3>
+<body>
+
+
+
+    <!-- The Modal -->
+    <div class="modal" id="myModal">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h1 class='col-12 modal-title text-center' style = "color: #17a2b8;">QuizEms Grader</h1>
+
+                    <h2 class='col-12 modal-title text-center' style = "color: #17a2b8;">Your quiz has been submitted!</h2>
+
+
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+
+                <!-- Modal body -->
+                <div class="modal-body">
+
+                    <div class="studentDetailsSubmit" style="color:rgb(73, 111, 143)">
+                        <h2>Name: {{user.name}} </h2>
+                       
+                        <h2> Quiz completed in {{user.time_taken}}</h2>
+                      
+                        <h2> Your grade is: {{user.grade}} </h2>
+                    </div>
+                    <h1 style="color : green"> You {{user.pass}}</h1>
+                </div>
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+      <!-- The Modal For Retake -->
+      <div class="modal" id="myModal2">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+    
+                    <!-- Modal Header -->
+                    <div class="modal-header">
+                        <h1 class='col-12 modal-title text-center' style="color: red">WARNING!</h1>
+    
+    
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+    
+                    <!-- Modal body -->
+                    <div class="modal-body">
+    
+                        <div class="warningMessage" style="font-display : 15px;">
+                       <p> You are opting to retake the quiz!</p>
+                       <p> By clicking 'RETAKE QUIZ' your answers will be deleted! This action cannot be undone.</p>
+                       <p> Click 'Close' to return to your quiz</p>
+
+
+                        </div>
+                        <button type="button" class="btn btn-warning" data-dismiss="modal" (click) = "refresh()">Retake Quiz</button>
+
+             
+
+                    </div>
+                    <!-- Modal footer -->
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-info" data-dismiss="modal">Close</button>
+                    </div>
+    
+                </div>
+            </div>
+        </div>
+
+
+</body>
+
+</html>
+
+
+
+<div class="container">
+
+    <div class="page-header">
+        <h1> QuizEms</h1>
+        <hr>
+        <h4>Professor: {{data.professorName}} </h4>
+        <h4> Quiz: {{data.quizName}}</h4>
+    </div>
+
+    <div *ngIf="data.flag">
+        <div class='quizFont'>
+
+            <div class="studentName">
+
+                <div class="col-md-4 col-md-offset-4">
+                    <br>
+
+                    <input type="text" name="question" placeholder="Student name" [(ngModel)]='user.name'><br>
+
+                </div>
+
+            </div>
+
+            <form>
+
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <div class="instructions">
+                    <h3>Check the answer to each multiple-choice question, and click on the "Submit" button to submit
+                        the
+                        quiz.</h3>
+                </div>
+                <br>
+
+
+                <div class="quizTimer">
+
+                    <p class="time">Time Remaining: {{data.date}}</p>
+
+                </div>
+
+                <br>
+
+
+
+                <br>
+                <br>
+                <div *ngFor="let q of data.questionslist">
+                    <br>
+
+
+                    <app-question-display [questionModel]="q"></app-question-display>
+                </div>
+
+
+                <button type="button" class="btn btn-success btn-lg" data-toggle="modal" data-target="#myModal" (click)="showScore()">Submit</button>
+                &nbsp;
+          <!--     <button type="button" class="btn btn-success btn-warning" (click) = 'refresh()'>Retake Quiz</button>-->   
+                <button type="button" class="btn btn-success btn-warning" data-toggle="modal" data-target="#myModal2" (click)="showScore()">Retake Quiz</button>
+
+            </form>
+        </div>
+    </div>
+
     <br>
-
-     <span class="time">Time Remaining: {{data.timeLeft}}</span>
     <br>
     <br>
-    <div *ngFor = "let q of data.questionslist"> 
-        <app-question-display [questionModel]="q"></app-question-display>
-      </div>
-<br>
-
-<input type="submit" >
-<input type="reset" >
-</form>
-</div>
-</div>

@@ -11,9 +11,9 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 </head>
 
-<body>
 
-  <div class="container">
+
+<div class="container">
 
 
     <!-- The Modal -->
@@ -23,18 +23,20 @@
 
           <!-- Modal Header -->
           <div class="modal-header">
-            <h1 class="modal-title">Congratulations on creating your quiz!</h1>
-            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h1 class="col-12 modal-title text-center">Congratulations on creating your quiz!</h1>
           </div>
 
           <!-- Modal body -->
-          <div class="modal-body">
+          <div class="modal-body text-center">
             <br>
             <br>
-            Here is your shareable link: 
+            Here is your shareable link:
             <br>
             <br>
-            https://quizemsnew.firebaseapp.com/#/quiz
+            <p>{{this.link}}</p>
+            <br>
+      <!--     <a href = "https://quizemsnew.firebaseapp.com/#/quiz" > Click to go to your quiz! </a>-->  
+            
           </div>
 
           <!-- Modal footer -->
@@ -48,17 +50,19 @@
 
   </div>
 
-</body>
-
 </html>
 
-<div class = "container">
+<div class="container">
 
+  
 
+  <div class="page-header">
+    <h1>QuizEms</h1>      
+  </div>
 
-<div class="jumbotron">
+  <div class="jumbotron">
 
-  <!-- 
+    <!-- 
   <div class="heading">
     <h2>After you have created your quiz, click save and then click the Create Link button to create a shareable link
       to your quiz!</h2>
@@ -66,85 +70,85 @@
 
 -->
 
-  <br>
-  <br>
-  <br>
+    <br>
+    <br>
+    <br>
 
 
-  <div class="row justify-content-center">
+    <div class="row justify-content-center">
 
-    <div class="col-xs-3">
+      <div class="col-xs-3 ">
+          <div class = "infoBox">
 
-      <div class="form-group">
+        <div class="form-group">
 
 
+          <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Professor Name" [(ngModel)]="professorName">
+          <br>
+          <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Quiz Name" [(ngModel)]="className">
+          <br>
+          <div class="col-md-10 col-md-offset-1">
 
-        <input type="text" class="form-control " id="exampleInputPassword1" placeholder="Professor Name"  [(ngModel)]= "professorName">
-        <br>
-        <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Quiz Name" [(ngModel)]= "className">
-        <br>
-        <input type="number" class="form-control " id="exampleInputPassword1" placeholder="Enter Quiz Time in Seconds"
-        [(ngModel)]= "time">
+          <input type="number" class="form-control " id="exampleInputPassword1" placeholder="Quiz Time (mins)"
+            [(ngModel)]="time">
+          </div>
+          </div>
 
           <app-timer> </app-timer>
 
 
+        </div>
+
       </div>
     </div>
-  </div>
 
 
 
 
-  <div class="headingButtons">
- <br>
+    <div class="headingButtons">
+      <br>
+
+      <br>
+      <div class="validationButton" *ngIf="this.data.validationFlag">
+
+
+        <svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
+          <circle class="checkmark__circle" cx="26" cy="26" r="25" fill="none" />
+          <path class="checkmark__check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8" />
+        </svg>
+
+      </div>
+
+      <br>
+      <br>
    
-    <br>
-    <div class="validationButton" *ngIf="this.data.validationFlag">
-
-
-      <svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
-        <circle class="checkmark__circle" cx="26" cy="26" r="25" fill="none" />
-        <path class="checkmark__check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8" />
-      </svg>
-
     </div>
-
-    <br>
-    <br>
-    <br>
-    <br>
    
-    <br>
-
-  <br>
-  <br>
 
 
-  <div *ngFor="let q of data.questionslist">
-    <app-questions [questionModel]="q"></app-questions>
-  </div>
+    <div *ngFor="let q of data.questionslist">
+      <app-questions [questionModel]="q"></app-questions>
+    </div>
+    <div class="newQ">
 
-  <div class="newQ">
+      <button type="button" class="btn btn-success btn-lg" (click)="newQuestion() && scrollPage()">Add a new question</button>
+      <br>
+      <br>
+      <br>
+      <br>
+      <div class="twoButtons">
+        <button type="button" class="btn btn-info btn-md" (click)="populateQuiz() && quizName()">Save
+          progress</button>
+          &nbsp;
 
-    <button type="button" class="btn btn-success btn-lg" (click)="newQuestion() && scrollPage()">Add a new question</button>
-    <br>
-    
-    <div class = "twoButtons">
-      <button type="button" class="btn btn-info btn-md" (click)="populateQuiz() && quizName()">Save
-        progress</button>
-  
-  
-      &nbsp;
-      <!--  <button (click)="loadQuiz()">Load</button>-->
-      <button type="button" class="btn btn-info btn-md" (click)="createLink()">Create
-        Quiz Link</button>
-  
+        <!--  <button (click)="loadQuiz()">Load</button>-->
+        <button type="button" class="btn btn-info btn-md" data-toggle="modal" data-target="#myModal" (click)="createLink()">Create
+          Quiz Link</button>
+
+      </div>
+
     </div>
 
   </div>
 
-
-</div>
-
-</div>
+  

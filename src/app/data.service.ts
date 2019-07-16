@@ -23,6 +23,7 @@ export class DataService {
   updatedTime: any;
   professorName: any;
   quizName: any;
+  date : any;
 
   constructor() {
 
@@ -36,35 +37,37 @@ export class DataService {
 
   }
 
-  startTimer(timeLeft: number) {
+  startTimer(timeLeft: any) {
+    
 
+    console.log(timeLeft);
     localStorage.getItem('key1')
     this.timeLeft = JSON.parse(localStorage.getItem('key1'));
-    var date = new Date(this.timeLeft * 1000).toISOString().substr(11, 8);
+    console.log(this.timeLeft)
+    //var date = new Date(this.timeLeft * 1000).toISOString().substr(11, 8);
 
 
     //console.log(date)
-
-
+    this.timeLeft = this.timeLeft * 60;
 
     console.log(this.timeLeft)
 
 
-
     this.interval = setInterval(() => {
+     
 
       console.log(this.timeLeft)
-      this.updatedTime = this.timeLeft;
       if (this.timeLeft > 0) {
-        this.timeLeft = date
         this.timeLeft--;
-
+        this.date = new Date(this.timeLeft * 1000).toISOString().substr(11, 8);
+       // console.log(date)
         if (this.timeLeft == 0) {
 
           this.flag = false;
         }
 
-      } else {
+      } 
+      else {
         timeLeft;
       }
     }, 1000)

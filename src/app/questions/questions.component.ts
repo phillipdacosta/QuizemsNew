@@ -23,7 +23,7 @@ export class QuestionsComponent implements OnInit {
 
 
   ngOnInit() {
-    window.scrollTo({ top: 8000, behavior: 'smooth' })
+    window.scrollTo({ top: 10000, behavior: 'smooth' })
   }
 
 }

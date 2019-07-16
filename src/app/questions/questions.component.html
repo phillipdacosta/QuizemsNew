@@ -1,25 +1,27 @@
 
 
 <div class = "forms-group">  
-
+    <hr>
   <div class = "deleteButton" >
-      <button type="button" class="btn btn-danger btn-lg" (click)="removeQuestion()">Delete</button>
+      <button type="button" class="btn btn-danger btn-md" (click)="removeQuestion()">Delete</button>
 
   </div>
 <div class = "questionFont">
 
-
+  
 <form>
   <br>
-  Question: <input type="text" name="question" [(ngModel)] = "questionModel.question"><br> 
-  Ans1: <input type="text" name="a1" [(ngModel)] = "questionModel.answerOne"><br>
-  Ans2: <input type="text" name="a2" [(ngModel)] = "questionModel.answerTwo"><br>
-  Ans3: <input type="text" name="a3"[(ngModel)] = "questionModel.answerThree"><br>
-  Ans4: <input type="text" name="a4"[(ngModel)] = "questionModel.answerFour"><br>
-  <br>
-  Correct Answer: <input type="text" name="correctAnswer"[(ngModel)] = "questionModel.correctAnswer"><br>
-</form>
+  
 
+  Question: <input type="text" name="question" [(ngModel)] = "questionModel.question">
+  a): <input type="text" name="a1" [(ngModel)] = "questionModel.answerOne">
+  b): <input type="text" name="a2" [(ngModel)] = "questionModel.answerTwo">
+  c): <input type="text" name="a3"[(ngModel)] = "questionModel.answerThree">
+  d): <input type="text" name="a4"[(ngModel)] = "questionModel.answerFour">
+
+  Answer: <input type="text" name="correctAnswer"[(ngModel)] = "questionModel.correctAnswer"><br>
+
+</form>
 </div>
 
 <br>

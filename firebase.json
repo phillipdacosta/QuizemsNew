@@ -5,11 +5,6 @@
       "firebase.json",
       "**/.*",
       "**/node_modules/**"
-      
-    ],
-    "rewrites": [ {
-      "source": "/index.html",
-      "destination": "https://quizemsnew.firebaseapp.com/quiz"
-    } ]
+    ]
   }
 }

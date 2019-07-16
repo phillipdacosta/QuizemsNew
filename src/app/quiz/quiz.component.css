@@ -8,7 +8,86 @@
 .time {
 
 
-    border-style: solid;
-    font-size: 26px;
- 
+    font-size: 1.2em;
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", 
+    Helvetica, Arial, "Lucida Grande", sans-serif, bold;
+    color: #17a2b8;
+  }
+
+  .page-header{
+
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", 
+    Helvetica, Arial, "Lucida Grande", sans-serif, bold; color: #17a2b8;
+    text-align: center;
+    background-size: 60px;
+  
+  }
+
+  .quizTimer{
+
+    position:fixed;
+    top: 3vh;
+    left: 70vw;
+    z-index: 1;
+    background-color:#ffffff;
+    font-size: 1em;
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", 
+    Helvetica, Arial, "Lucida Grande", sans-serif, bold;
+    box-shadow: 2px 2px 10px #888888;
+    padding-right: 1em;
+    padding-left: 1em;
+    padding-top: 1em;
+
+
+  }
+
+.studentName{
+
+    opacity: 6;
+    text-align: center;
+}
+
+.modal-dialog {
+    max-width: 100%;
+    max-height: 100%;
+    padding: 0;
+    text-align: center;
+  }
+  
+  .modal-content {
+    height: 99%;
+    max-width: 100%;
+    text-align: center;
+
+  }
+  .modal-title{
+
+    text-align: center;
+
+  }
+
+  .studentDetailsSubmit{
+
+    font-display: blue;
+  }
+
+  .instructions{
+
+    font-display: #17a2b8;
+  }
+
+  input { 
+    text-align: center; 
+  }
+
+  .warningMessage{
+
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", 
+    Helvetica, Arial, "Lucida Grande", sans-serif, bold;
+    font-display: green;
+  }
+
+  .modal-header{
+
+    font-display: green;
   }

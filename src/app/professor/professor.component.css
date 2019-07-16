@@ -45,7 +45,7 @@
   Helvetica, Arial, "Lucida Grande", sans-serif;
 }
 
-checkmark__circle {
+#checkmark__circle {
   stroke-dasharray: 166;
   stroke-dashoffset: 166;
   stroke-width: 2;
@@ -53,11 +53,17 @@ checkmark__circle {
   stroke: #7ac142;
   fill: none;
   animation: stroke 0.6s cubic-bezier(0.65, 0, 0.45, 1) forwards;
+     position: fixed;
+    top:-100%; right:-100%; left:-100%; bottom:-100%;
+    margin:auto;
+    z-index:0;
+
+
 }
 
 .checkmark {
-  width: 56px;
-  height: 56px;
+  width: 60px;
+  height: 60px;
   border-radius: 50%;
   display: block;
   stroke-width: 2;
@@ -66,6 +72,13 @@ checkmark__circle {
   margin: -6.5% auto;
   box-shadow: inset 0px 0px 0px #7ac142;
   animation: fill .4s ease-in-out .4s forwards, scale .3s ease-in-out .9s both;
+  position: fixed;
+  top:-100%; right:-100%; left:-100%; bottom:-100%;
+  margin:auto;
+  z-index:0;
+  animation: opacityOn 1s normal forwards ;
+  animation-delay: .5s;
+    
 }
 
 .checkmark__check {
@@ -73,11 +86,16 @@ checkmark__circle {
   stroke-dasharray: 48;
   stroke-dashoffset: 48;
   animation: stroke 0.3s cubic-bezier(0.65, 0, 0.45, 1) 0.8s forwards;
+  position: fixed;
+  top:-100%; right:-100%; left:-100%; bottom:-100%;
+  margin:auto;
+  z-index:0;
+
 }
 
 @keyframes stroke {
   100% {
-    stroke-dashoffset: 0;
+    stroke-dashoffset: 1;
   }
 }
 @keyframes scale {
@@ -85,17 +103,99 @@ checkmark__circle {
     transform: none;
   }
   50% {
-    transform: scale3d(1.1, 1.1, 1);
+    transform: scale3d(4.1, 4.1, 4);
   }
 }
-@keyframes fill {
-  100% {
+
+
+@keyframes opacityOn {
+  0% {
+    opacity: 2;
     box-shadow: inset 0px 0px 0px 30px #7ac142;
-  }
+
 }
+50%{
+  opacity: 1;
+  box-shadow: inset 0px 0px 0px 30px #7ac142;
+
+}
+100% {
+    opacity: 0;
+    
+}
+}
+
+
 
 
 .twoButtons{
 
   text-align: center;
 }
+
+.jumbotron{
+
+ line-height: 1;
+ border: 1px solid;
+ padding: 10px;
+ box-shadow: 5px 10px #8b9b99;
+}
+
+.page-header{
+
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", 
+  Helvetica, Arial, "Lucida Grande", sans-serif, bold; color: #17a2b8;
+  text-align: center;
+  background-size: 60px;
+
+}
+
+.h1{
+
+  font-size: 20rem;
+}
+
+input { 
+  text-align: center; 
+}
+
+.form-control{
+  color: #107585;
+}
+
+.infoBox{
+
+     
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", 
+  Helvetica, Arial, "Lucida Grande", sans-serif, bold; color: #17a2b8; 
+  text-align: center;
+  font-display: #17a2b8;
+  
+
+  
+}
+
+
+.col-xs-6{
+
+  text-align: center;
+}
+
+input::-webkit-input-placeholder {
+  text-align: center;
+  color: #17a2b8;
+  opacity: 0.4;
+}
+input:-moz-placeholder {
+  text-align: center;
+}
+input::-moz-placeholder {
+  text-align: center;
+}
+input:-ms-input-placeholder {
+  text-align: center;
+}
+
+
+
+

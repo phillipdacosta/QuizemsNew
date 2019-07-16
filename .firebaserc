@@ -1,5 +1,6 @@
 {
   "projects": {
-    "quizems": "quizemsnew"
+    "quizems": "quizemsnew",
+    "default": "quizemsnew"
   }
 }

@@ -17,6 +17,7 @@ export class ProfessorComponent implements OnInit {
   key1 : any = 'key1'
   key2 : any = 'key2'
   key3 : any = 'key3'
+  flag2 : boolean = false;
 
   @Input() professorName : any;
   @Input() className : any;
@@ -28,9 +29,7 @@ export class ProfessorComponent implements OnInit {
 
   ngOnInit() {
 
-    window.scrollTo(0, 9500);
-
-
+    window.scrollTo(0, 10000);
   }
 
   populateQuiz(){
@@ -39,13 +38,17 @@ export class ProfessorComponent implements OnInit {
     this.flag = true;
     this.data.validationFlag = true;
     //this.data.startTimer(this.time)
-    this.time = this.time * 60;
      // this.data.timeLeft = this.time;
+
       localStorage.setItem(this.key1, this.time)
       this.data.startTimer(this.time)
   
       this.data.professorName = this.professorName;
       this.data.quizName = this.className;
+
+  
+  
+  
   
       localStorage.setItem(this.key2, this.professorName)
       localStorage.setItem(this.key3, this.className)
@@ -76,7 +79,7 @@ export class ProfessorComponent implements OnInit {
 
   createLink(){
 
-    this.link = 'https://quizems-daf82.firebaseapp.com/#/quiz'; 
+    this.link = 'https://quizemsnew.firebaseapp.com/#/quiz'; 
     //this.router.navigate(['/quiz']);
     
     

@@ -3,3 +3,9 @@
     font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", 
     Helvetica, Arial, "Lucida Grande", sans-serif;
 }
+
+.hr { display: block; height: 1px;
+    border: 0; border-top: 6px solid #ccc;
+    margin: 1em 0; padding: 0; 
+    border-color: #ccc;
+}

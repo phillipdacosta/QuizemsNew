@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { DataService } from '../data.service';
 
 @Component({
@@ -11,11 +11,32 @@ export class QuizComponent implements OnInit {
   timeLeft: number;
   professorName : any
   quizName : any;
+  user: Object;
+  constructor(private data : DataService) { 
+
+    this.user = 
+    {
+     
+      name : '',
+      time_taken : '58 mins',
+      grade : '96%',
+      pass : 'passed!',
+      fail : 'fail'
+
+    }
+  }
 
 
-  constructor(private data : DataService) { }
+  refresh(): void {
+
+    window.location.reload();
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+}
 
   ngOnInit() {
+
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+
     this.data.loadData("questions");
 
     this.timeLeft = this.data.timeLeft
